@@ -3,21 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@reduxjs/toolkit": "^1.5.0",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
+    "@reduxjs/toolkit": "^1.5.0",   
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
-    "react-scripts": "4.0.3",
-    "react-test-render": "^1.1.2",
-    "ts-jest": "^26.5.4",
-    "typescript": "^4.1.2",
+    "react-scripts": "4.0.3",   
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -25,7 +18,8 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "test": "jest",
-    "test-w": "jest --watch"
+    "test-w": "jest --watch",
+    "server":"json-server --watch db.json --port 3001"
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +40,13 @@
     ]
   },
   "devDependencies": {
-    "identity-obj-proxy": "^3.0.0"
+    "identity-obj-proxy": "^3.0.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "react-test-render": "^1.1.2",
+    "ts-jest": "^26.5.4",
+    "typescript": "^4.1.2"
   }
 }

@@ -3,10 +3,10 @@ module.exports = {
     moduleDirectories: ['node_modules', 'utils'],
     moduleFileExtensions: ["ts", "tsx", "js"],
     transform: { "^.+\\.(ts|tsx)$": "ts-jest" },
-    // setupFilesAfterEnv: [
-    //     "@testing-library/react/cleanup-after-each",
-    //     "@testing-library/jest-dom/extend-expect"
-    // ],
+    setupFilesAfterEnv: [
+        // "@testing-library/react/cleanup-after-each",
+        "@testing-library/jest-dom/extend-expect"
+    ],
     testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
     collectCoverage: false,
     moduleNameMapper: {
