@@ -5,3 +5,9 @@
     margin: 10px auto;
     border-radius: 10px;
 }
+
+.todo-create-box{
+    max-width: 450px;
+    margin: 10px auto;
+    padding: 10px 10px;
+}
