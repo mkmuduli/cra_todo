@@ -8,7 +8,7 @@ export interface TodoContainerProp { }
 export function TodoContainer(props: TodoContainerProp) {
     const [todoName, setTodoName] = useState<string>('');
     const onCreateTodo = useCallback((event: React.FormEvent<HTMLButtonElement>) => {
-        
+        setTodoName("");
     }, [todoName]);
     const onChangeTodoName = useCallback((event: React.FormEvent<HTMLInputElement>) => {
         setTodoName(event.currentTarget.value)
@@ -24,7 +24,7 @@ export function TodoContainer(props: TodoContainerProp) {
                         type="text"
                         placeholder="TASK"
                         name="task-name" />
-                    <Button name="CREATE" onClick={onCreateTodo} className="button"  testId="create-btn" />
+                    <Button name="CREATE" onClick={onCreateTodo} className="button"/>
                 </div>
 
             </div>

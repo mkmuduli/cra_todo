@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, cleanup, fireEvent, waitFor } from '../../utils/test-utils';
+import { render, screen, cleanup, fireEvent, waitFor, getByRole } from '../../utils/test-utils';
 import { TodoContainer } from '../../component/todo-container';
 
 
@@ -17,15 +17,19 @@ test("todo-container render successful", () => {
 });
 
 test("on create todo input box should be empty", () => {
-    const { container, getByTestId } = render(<TodoContainer />);
-    fireEvent(getByTestId("create-btn"), new MouseEvent('click', {
+    const { container, getByRole, getByPlaceholderText } = render(<TodoContainer />);
+    const createBtn = getByRole('button', { name: "CREATE" });
+    const input = getByPlaceholderText("TASK");
+    fireEvent.change(input, {
+        target:{value:"aaa"}
+    });
+    fireEvent(createBtn, new MouseEvent('click', {
         bubbles: true,
         cancelable: true
-    }))
-    console.log(screen.getByRole('input', { name: 'task-name' }))
-    // waitFor(()=>{
-    //     expect(screen.getByRole('input', { name: 'task-name' })).toBe('test');
-    // })
+    }));
+    
+    expect(input).toHaveValue("")
+
 })
 
 
