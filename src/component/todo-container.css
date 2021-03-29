@@ -9,5 +9,35 @@
 .todo-create-box{
     max-width: 450px;
     margin: 10px auto;
-    padding: 10px 10px;
+}
+
+.todo-item-box{   
+    border: 2px solid gray;
+    max-width: 450px;
+    margin: 10px auto;
+    min-height: 300px;
+    border-radius: 10px;
+}
+.todo-item{
+    border-bottom: 2px solid gray;
+    margin: 5px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.todo-item-content{
+    flex:4;
+    text-align: left;
+    align-self: center;
+    padding-left: 2px;
+}
+.todo-item-btn-container{
+    flex:2;
+    text-align: right;
+    
+}
+.todo-item-btn{
+    padding: 7px 14px;
+    margin: 2px;
 }

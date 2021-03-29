@@ -2,14 +2,22 @@ import { useCallback, useState } from 'react';
 import './todo-container.css';
 import { InputBox } from './common/input';
 import { Button } from './common/button';
+import { TodoItem } from './todo-item';
+
+import { useAppDispatch, useAppSelector } from '../redux/redux-hooks';
+import { todoSelector, addTask,Todo } from '../redux/todo-slice';
 
 export interface TodoContainerProp { }
 
+
 export function TodoContainer(props: TodoContainerProp) {
     const [todoName, setTodoName] = useState<string>('');
+    const todos : Todo [] = useAppSelector(todoSelector);
+    const dispatch = useAppDispatch();
     const onCreateTodo = useCallback((event: React.FormEvent<HTMLButtonElement>) => {
+        dispatch(addTask({ name: todoName, isCompleted: false }))
         setTodoName("");
-    }, [todoName]);
+    }, [todoName, dispatch]);
     const onChangeTodoName = useCallback((event: React.FormEvent<HTMLInputElement>) => {
         setTodoName(event.currentTarget.value)
     }, []);
@@ -24,7 +32,12 @@ export function TodoContainer(props: TodoContainerProp) {
                         type="text"
                         placeholder="TASK"
                         name="task-name" />
-                    <Button name="CREATE" onClick={onCreateTodo} className="button"/>
+                    <Button name="CREATE" onClick={onCreateTodo} className="button" />
+                </div>
+                <div className="todo-item-box" data-testid="todoItemBox">
+                    {todos.map((todo:Todo,index)=>{
+                       return <TodoItem key={index} name={todo.name} isCompleted={todo.isCompleted} />
+                    })}
                 </div>
 
             </div>

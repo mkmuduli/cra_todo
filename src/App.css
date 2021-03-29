@@ -60,3 +60,7 @@ input[type=text], select {
   border-radius: 4px;
   margin: 0 2px;
 }
+
+*{
+  box-sizing: border-box;
+}
