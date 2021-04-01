@@ -1,11 +1,12 @@
-module.exports = {
+module.export = {
     roots: ["<rootDir>/src"],
     moduleDirectories: ['node_modules', 'utils'],
     moduleFileExtensions: ["ts", "tsx", "js"],
     transform: { "^.+\\.(ts|tsx)$": "ts-jest" },
     setupFilesAfterEnv: [
-        // "@testing-library/react/cleanup-after-each",
-        "@testing-library/jest-dom/extend-expect"
+        "@testing-library/react/cleanup-after-each",
+        "@testing-library/jest-dom/extend-expect",
+        "<rootDir>/src/setupTests.js"
     ],
     testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
     collectCoverage: false,
